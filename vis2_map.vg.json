@@ -8,7 +8,7 @@
       },  
     "projection": {"type": "equalEarth"},
     "data": {
-        "url": "https://raw.githubusercontent.com/XianLoong12/vis2_draft/main/gadm41_MYS_1.json",
+        "url": "https://raw.githubusercontent.com/XianLoong12/vis2/main/gadm41_MYS_1.json",
         "format": {"type": "topojson", "feature": "gadm41_MYS_1"}
     },
     "transform": [

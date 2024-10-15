@@ -6,7 +6,7 @@
     "fontSize": 24  
   },  
   "data": {
-    "url": "https://raw.githubusercontent.com/XianLoong12/vis2_draft/main/birth_sex_ethnic_state.csv",
+    "url": "https://raw.githubusercontent.com/XianLoong12/vis2/main/birth_sex_ethnic_state.csv",
     "format": {"type": "csv"}
   },
   "transform": [
