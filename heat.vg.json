@@ -1,0 +1,76 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 400,
+    "height": 450,
+    "title": {
+        "text": "Birth Trends Across Malaysian States",
+        "fontSize": 24  
+      },  
+    "data": {
+      "url": "https://raw.githubusercontent.com/XianLoong12/week10hw/main/Cleaned_Birth_Data_fm.csv",
+      "format": {"type": "csv"}
+    },
+    "transform": [
+      {
+        "filter": "datum.date >= Min_Year && datum.date <= Max_Year"
+      }
+    ],
+    "params": [
+      {
+        "name": "Min_Year",
+        "value": 2015,
+        "bind": {
+          "input": "range",
+          "min": 2000,
+          "max": 2022,
+          "step": 1,
+          "name": "Select Min Year: "
+        }
+      },
+      {
+        "name": "Max_Year",
+        "value": 2022,
+        "bind": {
+          "input": "range",
+          "min": 2000,
+          "max": 2022,
+          "step": 1,
+          "name": "Select Max Year: "
+        }
+      }
+    ],
+    "mark": "rect",
+    "encoding": {
+      "x": {
+        "field": "date",
+        "type": "ordinal",
+        "title": "Year",
+        "axis": {
+          "labelAngle": 0,
+          "labelFontSize": 14, 
+          "titleFontSize": 16  
+        }
+      },
+      "y": {
+        "field": "state",
+        "type": "nominal",
+        "title": "State",
+        "axis": {
+          "labelFontSize": 14,  
+          "titleFontSize": 16  
+        }
+      },
+      "color": {
+        "field": "abs",
+        "type": "quantitative",
+        "title": "Number of Births",
+        "scale": {"scheme": "blues"}
+      },
+      "tooltip": [
+        {"field": "state", "type": "nominal", "title": "State"},
+        {"field": "date", "type": "ordinal", "title": "Year"},
+        {"field": "abs", "type": "quantitative", "title": "Number of Births"}
+      ]
+    }
+  }
+  
